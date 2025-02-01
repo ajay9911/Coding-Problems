@@ -1,6 +1,8 @@
-package coding.array;
+package coding.array.sorting;
 
-import java.util.Arrays;
+import coding.array.inputArray.InputArray;
+import coding.array.sum.Sum;
+
 import java.util.Scanner;
 
 public class Sorting {
@@ -12,28 +14,17 @@ public class Sorting {
         int size = sc.nextInt();
 
         int[] arr = new int[size];
-
-
-        // Reading integer array
-        for (int i = 0; i < size; i++) {
-            System.out.println("Enter the " + i + "th element of array:");
-            arr[i] = sc.nextInt();
-        }
-
-        // Consume the leftover newline
-        sc.nextLine();
-
-
-
-        // Printing integer array
-        System.out.println("Integer Array:");
-        for (int i = 0; i < size; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println(); // Newline for clarity
-
+        InputArray.inputArray(arr);
+        System.out.println();
 
         sortArray(arr);
+
+
+        System.out.println();
+
+
+
+        System.out.println("sum of arrays elements:"+ Sum.sumArray(arr));
 
      sc.close();
     }
@@ -45,7 +36,7 @@ public class Sorting {
                     int max=arr[i];
                     arr[i]=arr[j];
                     arr[j]=max;
-                    
+
                 }
             }
         }
